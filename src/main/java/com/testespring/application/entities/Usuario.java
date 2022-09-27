@@ -13,11 +13,16 @@ public class Usuario implements  Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @EqualsAndHashCode.Exclude
     private String name;
+    @EqualsAndHashCode.Exclude
     private String email;
+    @EqualsAndHashCode.Exclude
     private String phone;
+    @EqualsAndHashCode.Exclude
     private String password;
 
     public Usuario(Long id, String name, String email, String phone, String password) {
